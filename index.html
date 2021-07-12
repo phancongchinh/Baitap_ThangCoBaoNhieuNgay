@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tháng có bao nhiêu ngày</title>
+</head>
+<body>
+<label for="month">Chọn tháng:</label> <br>
+<select name="month" id="month" style="width: 200px">
+    <option value="jan">Tháng một</option>
+    <option value="feb">Tháng hai</option>
+    <option value="mar">Tháng ba</option>
+    <option value="apr">Tháng bốn</option>
+    <option value="may">Tháng năm</option>
+    <option value="jun">Tháng sáu</option>
+    <option value="jul">Tháng bảy</option>
+    <option value="aug">Tháng tám</option>
+    <option value="sep">Tháng chín</option>
+    <option value="oct">Tháng mười</option>
+    <option value="nov">Tháng mười một</option>
+    <option value="dec">Tháng mười hai</option>
+</select> <br><br>
+
+<button type="button" id="check" onclick="howmanyday()">Kiểm tra</button>
+
+<p id="result">The result will be shown here!</p>
+
+<script>
+    function howmanyday() {
+        let month = document.getElementById("month").value;
+
+        switch (month) {
+            case "jan":
+            case "mar":
+            case "may":
+            case "jul":
+            case "aug":
+            case "oct":
+            case "dec":
+                document.getElementById("result").innerHTML =  "31 ngày.";
+                break;
+            case "apr":
+            case "jun":
+            case "sep":
+            case "nov":
+                document.getElementById("result").innerHTML = "30 ngày.";
+                break;
+            case "feb":
+                document.getElementById("result").innerHTML = "28 hoặc 29 ngày.";
+        }
+    }
+
+</script>
+
+</body>
+</html>
